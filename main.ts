@@ -26,6 +26,7 @@ namespace SpriteKind {
     export const Weak = SpriteKind.create()
     export const Cone = SpriteKind.create()
     export const Bucket = SpriteKind.create()
+    export const Grave = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.Snowpea, SpriteKind.Detect, function (sprite, otherSprite) {
     sprite.setKind(SpriteKind.Shot)
@@ -1346,7 +1347,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             }
         }
         if (mySprite.tileKindAt(TileDirection.Center, assets.tile`myTile13`)) {
-            if (info.score() >= 150) {
+            if (info.score() >= 175) {
                 mySprite4 = sprites.create(img`
                     . . . . . . . . . . . . . . . . 
                     . . . . . . . . . . . . . . . . 
@@ -3512,7 +3513,7 @@ scene.onOverlapTile(SpriteKind.Mouse, assets.tile`myTile0`, function (sprite2, l
             }
         }
         if (Type == 7) {
-            if (info.score() >= 150) {
+            if (info.score() >= 175) {
                 mySprite3 = sprites.create(img`
                     . . . . . . . . . . . . . . . . 
                     . . . . . . . . . . . . . . . . 
@@ -3677,7 +3678,7 @@ scene.onOverlapTile(SpriteKind.Mouse, assets.tile`myTile0`, function (sprite2, l
                 tiles.placeOnTile(mySprite3, sprite2.tilemapLocation())
                 Type = 0
                 sprites.destroy(mySprite4)
-                info.changeScoreBy(-150)
+                info.changeScoreBy(-175)
             }
         }
         if (Type == 8) {
@@ -9693,7 +9694,7 @@ game.onUpdateInterval(Speed, function () {
     if (Go == true) {
         for (let index = 0; index < Num; index++) {
             if (Speed >= 2000) {
-                Speed += -1000
+                Speed += -5000
             }
             if (Speed <= 30000) {
                 if (Speed > 10000) {
